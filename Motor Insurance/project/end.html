@@ -1,0 +1,176 @@
+<html>
+    <head>
+        <title>Payment Successful</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                background: url('building2.jpg') no-repeat center center fixed;
+                background-size: cover;
+            }
+            .content {
+                background: rgba(255, 255, 255, 0.8);
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                margin: 20px;
+            }
+            h2 {
+                background-color: #005c99;
+                color: white;
+                padding: 10px;
+                border-radius: 5px;
+                margin: 0 0 20px 0;
+            }
+            h3 {
+                color: #333;
+            }
+            img {
+                margin-top: 20px;
+                width: 150px;
+                height: auto;
+            }
+            .blur-background {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: inherit;
+                filter: blur(3px);
+                z-index: -1;
+            }
+            footer {
+                background: rgba(255, 255, 255, 0.8);
+                width: 100%;
+                padding: 10px 0;
+                text-align: center;
+                box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+            .contact {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+            }
+            .contact div {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .contact img {
+                width: 30px;
+                height: auto;
+            }
+            .contact span {
+                font-size: 16px;
+                color: #333;
+            }
+            
+            .download-button {
+                background-color: #005c99;
+                color: white;
+                padding: 10px 20px;
+                margin-top: 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                text-decoration: none;
+            }
+            .download-button:hover {
+                background-color: #2952a3;
+            }
+
+            .home-icon {
+            position: fixed;
+            top: 6%;
+            left: 6%;
+            z-index: 10;
+        }
+
+        .home-icon img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .home-icon img:hover {
+            transform: scale(1.1);
+        }
+
+        
+
+        @media (max-width: 768px) {
+            .home-icon {
+                top: 4%;
+                left: 4%;
+            }
+
+            .home-icon img {
+                width: 50px;
+                height: 50px;
+            }
+
+            
+        }
+
+        @media (max-width: 480px) {
+
+            .home-icon {
+                top: 4%;
+                left: 4%;
+            }
+
+            .home-icon img {
+                width: 50px;
+                height: 50px;
+            }
+
+          
+        }
+
+
+        </style>
+    </head>
+    <body>
+        <a href="new1.html" class="home-icon">
+            <img src="home.jpg" alt="Home">
+        </a>
+
+        <div class="blur-background"></div>
+        <div class="content">
+            <h2>PAYMENT SUCCESSFUL</h2>
+            <img src='success.gif' alt='Success'>
+            <h3>Your Payment was successful. <br>You will receive a confirmation email shortly.</h3>
+            <a href="invoice.php" class="download-button">Download Invoice</a>
+        </div>
+        <footer>
+            <div class="contact">
+                <h3><i><b><u> FOR FURTHER DETAILS CONTACT US THROUGH</u></b></i></h3>
+                <div>
+                    <img src="insta.jpg" alt="Instagram">
+                    <span>@motor_insurance</span>
+                </div>
+                <div>
+                    <img src="phone.jpg" alt="Phone">
+                    <span>+91 8428907339</span>
+                </div>
+                <div>
+                    <img src="mail.jpg" alt="Email">
+                    <span>motorinsurance@gmail.com</span>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motor Insurance</title>
+    <link rel=" shortcut icon" type="x-icon" href="logo.png">
+    <style>
+        /* Reset default styles and set basic typography */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: #fff;
+            background:transparent; /* Fallback background */
+        }
+
+        /* Video background setup */
+        #videoBG {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            object-fit: cover;
+            filter: blur(5px);
+        }
+
+        /* Blur effect on the background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            z-index: -1;
+        }
+
+        /* Header styling */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: url('11.jpg') no-repeat center center fixed;
+            background-size: cover;
+            backdrop-filter: blur(0px); /* Blur effect */
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 10;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Logo styling */
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 70px;
+            width: auto;
+            border-radius: 50%;
+            border: 4px solid #fff;
+        }
+
+        .logo h1 {
+            font-size: 2.5rem;
+            margin-left: 15px;
+            color: #fafafa;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Navigation Links */
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.4);
+            color: #2132c7;
+        }
+
+        /* Container for content */
+        .container {
+            position: relative;
+            z-index: 1;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10vh 5%;
+            text-align: center;
+        }
+
+        /* Title styling */ 
+
+        h1 {
+            color: #CC9900;
+            font-size: 4rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            animation: fadeIn 2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Image map container */
+        .image-map-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        /* Image map styling */
+        .image-map {
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+            text-align: center;
+            overflow: hidden;
+            cursor: pointer; /* Cursor change for interaction */
+        }
+
+        .image-map img {
+            max-width: 130px;
+            height: auto;
+            border: 4px solid #fff;
+            border-radius: 50%;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .image-map h2 {
+            font-size: 2rem;
+            margin: 15px 0;
+            color: #000000;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Hover effects */
+        .image-map:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.9);
+        }
+
+        .image-map img:hover {
+            border-color: #2132c7;
+            transform: rotate(10deg);
+        }
+
+        /* Canvas for dynamic effects */
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: antiquewhite;
+            pointer-events: none; /* Ensure canvas doesn't block interaction */
+            z-index: -1; /* Behind everything */
+        }
+
+        /* Media queries */
+        @media (max-width: 768px) {
+            .logo img {
+                height: 60px;
+            }
+
+            .logo h1 {
+                font-size: 2rem;
+            }
+
+            .image-map img {
+                max-width: 100px;
+            }
+
+            .image-map h2 {
+                font-size: 1.6em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo img {
+                height: 50px;
+            }
+
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+
+            .image-map img {
+                max-width: 80px;
+            }
+
+            .image-map h2 {
+                font-size: 1.4em;
+            }
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Company Logo">
+            <h1>Motor Insurance</h1>
+        </div>
+    </header>
+
+    <!-- Video background -->
+    <video id="videoBG" autoplay muted loop>
+        <source src="bgvdo.webm" type="video/mp4">
+    </video>
+
+    <!-- Content container -->
+    <div class="container"><br><br>
+        <canvas id="bgCanvas"></canvas> <!-- Canvas for dynamic background effects -->
+        <h1><b><i>Welcome to Motor Insurance</i><b></h1><br>
+
+        <!-- Image maps for navigation -->
+        <div class="image-map-container">
+            <!-- Customer side image map -->
+            <a href="new1.html"><div class="image-map">
+                <img src="img.jpg" usemap="#customer-map" alt="Customer Logo">
+                <map name="customer-map">
+                    <area shape="rect" coords="0,0,100,100" href="new1.html" alt="Customer Area">
+                </map>
+                <h2>CUSTOMER</h2>
+            </div></a>
+
+            <!-- Admin side image map -->
+            <a href="admin.html"><div class="image-map">
+                <img src="img.jpg" usemap="#admin-map" alt="Admin Logo">
+                <map name="admin-map">
+                    <area shape="rect" coords="0,0,100,100" href="admin.html" alt="Admin Area">
+                </map>
+                <h2>ADMIN</h2>
+            </div></a>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for canvas animations
+        const canvas = document.getElementById('bgCanvas');
+        const ctx = canvas.getContext('2d');
+    
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    
+        // Example of dynamic animation (replace with your own)
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+            // Set fill style with visible opacity (0.4 for example)
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.4)'; // White with 40% opacity
+    
+            // Draw a circle with dynamic size
+            const radius = Math.sin(Date.now() / 1000) * 100 + 200;
+            ctx.beginPath();
+            ctx.arc(canvas.width / 2, canvas.height / 2, radius, 0, 2 * Math.PI);
+            ctx.fill();
+    
+            requestAnimationFrame(draw);
+        }
+    
+        draw();
+    </script>
+    
+</body>
+</html>

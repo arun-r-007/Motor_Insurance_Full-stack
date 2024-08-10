@@ -1,0 +1,200 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motor Insurance</title>
+    <link rel=" shortcut icon" type="x-icon" href="logo.png">
+    <style>
+        body {
+
+            font-family: Arial, sans-serif;
+            margin: 0; 
+            padding: 20px;
+            background: url('officer1.jpg');
+            
+            background-size: cover;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+            position: relative; 
+        }
+        
+        form {
+            margin-bottom: 40px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid blue;
+            border-radius: 4px;
+            box-sizing: border-box; 
+        }
+        input[type="submit"] {
+            background-color: #da8247;
+            color: white;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #bfe47cb0;
+            color: rgb(0, 0, 0);
+        }
+        .result-container {
+            margin-top: 20px;
+        }
+        .result-container table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .result-container th,
+        .result-container td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        .result-container th {
+            background-color: #f2f2f2;
+        }
+
+
+
+
+
+        .home-icon {
+            position: fixed;
+            top: 6%;
+            left: 6%;
+            z-index: 10;
+        }
+
+        .home-icon img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .home-icon img:hover {
+            transform: scale(1.1);
+        }
+
+        .back-icon {
+            position: fixed;
+            top: 6%;
+            left: 88%;
+            z-index: 10;
+        }
+
+        .back-icon .back-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .back-icon .back-img:hover {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .home-icon {
+                top: 4%;
+                left: 4%;
+            }
+
+            .home-icon img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .back-icon {
+                top: 4%;
+                left: 89%;
+            }
+
+            .back-icon .back-img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .container {
+                position : absolute;
+                top:12%;
+                width : 72%;
+                height: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .form-container {
+                position: relative;
+                top: -8%;
+            }
+            .home-icon {
+                top: 4%;
+                left: 4%;
+            }
+
+            .home-icon img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .back-icon {
+                top: 4%;
+                left: 83%;
+            }
+
+            .back-icon .back-img {
+                width: 50px;
+                height: 50px;
+            }
+            .container {
+                position : absolute;
+                top:13%;
+                width : 82%;
+                height: 130%;
+            }
+
+           
+        }
+    </style>
+</head>
+<body>
+    <a href="first.html" class="home-icon">
+        <img src="home.jpg" alt="Home">
+    </a>
+    <a href="first.html" class="back-icon">
+        <img src="left-arrow.png" class="back-img" alt="Back">
+    </a>
+<br><br><br><br><br><br><br><br><br><br><br>
+    <div class="form-container">
+        <center>
+            <h2><i>OFFICER</i></h2>
+        </center>
+        <form action="disppay.php" method="POST">
+            <label for="name">User Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+</body>
+</html>

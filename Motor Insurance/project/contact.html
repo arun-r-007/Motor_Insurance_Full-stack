@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact Us - Motor Insurance</title>
+    <link rel="shortcut icon" type="x-icon" href="logo.png">
+    <link rel="stylesheet" href="style44.css">
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="new1.js"></script>
+    <style>
+        body {
+            background: url('cont.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+        .contact-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .contact-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .contact-header h1 {
+            font-size: 36px;
+        }
+        .contact-info, .contact-form {
+            width: 48%;
+            display: inline-block;
+            vertical-align: top;
+            box-sizing: border-box;
+        }
+        .contact-info {
+            margin-right: 4%;
+        }
+        .contact-info p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact-form input, .contact-form textarea {
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            padding: 10px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: #555;
+        }
+        .map-container {
+            margin-top: 20px;
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 400px;
+            border: 0;
+        }
+        .box1 .header, .box1 .header p, .box1 nav ul, .box1 nav ul a, .box1 .menu {
+            color: white;
+        }
+        .header img {
+            height: auto;
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="header" id="navbox">
+            <img src="logo.png" class="l1">
+            <p class="p1">MOTOR<br>INSURANCE</p>
+            <nav>
+                <ul class="ul1">
+                    <a href="first.html"><li class="h">MAIN</li></a>
+                    <a href="policy.html"><li class="h">POLICY</li></a>
+                    <a href="aboutus.html"><li class="h">ABOUT US</li></a>
+                    <a href="contact.html"><li class="h">CONTACT US</li></a>
+                    <br><br><br><br>
+                </ul>
+                <ul class="ul2">
+                    <a href="../otp/index.php"><li class="o">SIGN IN</li></a>
+                    <a href="../otp/index1.php" class="yes"><li class="o">SIGN UP</li></a>
+                </ul>
+                <div class="menu">
+                    <br>
+                    <div class="menu-line"></div>
+                    <div class="menu-line"></div>
+                    <div class="menu-line"></div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <br><br><br><br><br><br>
+    <div class="contact-container">
+        <div class="contact-header">
+            <h1 style="font-size: 50px; text-align: center;">CONTACT US</h1>
+        </div>
+        <div class="contact-info">
+            <p style="font-size: 30px;"><strong>Address:</strong></p>
+            <p style="font-size: 20px;">Avinashi Rd, Civil Aerodrome Post,<br>Coimbatore, Tamil Nadu 641014</p>
+            <p style="font-size: 30px;"><strong>Phone:</strong></p>
+            <p style="font-size: 20px;">0422 257 4071</p>
+            <p style="font-size: 30px;"><strong>Email:</strong></p>
+            <p style="font-size: 20px;">support@motorinsurance.com</p>
+        </div>
+        <div class="contact-form">
+            <form action="submit_contact_form.php" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="subject" placeholder="Subject" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div><br><br><br><br><br>
+        <p style="font-size: 30px;"><strong>Location:</strong></p><br><br>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.137203354903!2d77.02470567600756!3d11.02833115449476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba858979f85136b%3A0xdd9ca28d3c37cf8a!2sCoimbatore%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1722976975900!5m2!1sen!2sin"
+             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('.menu').click(function() {
+                $('.ul1').toggleClass('show');
+            });
+        });
+    </script>
+</body>
+</html>

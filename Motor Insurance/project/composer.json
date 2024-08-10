@@ -1,0 +1,6 @@
+{
+    "require": {
+        "monolog/monolog": "^1.0",
+        "league/color-extractor": "^0.4.0"
+    }
+}

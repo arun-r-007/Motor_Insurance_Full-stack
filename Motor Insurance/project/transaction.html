@@ -1,0 +1,114 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #006666 0%, #666699 100%);
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px; 
+        }
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input {
+            margin-bottom: 10px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 17px;
+        }
+        button {
+            padding: 12px;
+            background-color: #003399;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 17px;
+        }
+        button:hover {
+            background-color: #001a4d;
+        }
+        .icon-container {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .icon-container i {
+            font-size: 36px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Enter Your Card Details</h2>
+        <form id="creditCardForm" method="POST">
+            <label for="card_name"><i class="fa fa-user"></i> Card Holder Name</label>
+            <input type="text" id="card_name" name="card_name" placeholder="Name" required>
+
+            <label for="card_number"><i class="fa fa-credit-card"></i> Card Number</label>
+            <input type="text" id="card_number" name="card_number" placeholder="1111-2222-3333-4444" required>
+
+            <div class="row">
+                <div class="col-50">
+                    <label for="expiry_date"><i class="fa fa-calendar"></i> Expiry Date</label>
+                    <input type="text" id="expiry_date" name="expiry_date" placeholder="MM/YY" required>
+                </div>
+                <div class="col-50">
+                    <label for="cvv"><i class="fa fa-lock"></i> CVV</label>
+                    <input type="password" id="cvv" name="cvv" placeholder="352" required>
+                </div>
+            </div>
+
+            <div class="icon-container">
+                <i class="fa fa-cc-visa" style="color:navy;"></i>
+                <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function submitForm() {
+            var form = document.getElementById('creditCardForm');
+            var formData = new FormData(form);
+
+            fetch('process_payment.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(data);
+                if (data.includes('successfully')) {
+                    window.location.href = 'end.html';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while processing your payment.');
+            });
+        }
+    </script>
+</body>
+</html>

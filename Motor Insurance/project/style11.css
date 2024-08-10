@@ -1,0 +1,417 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Normalidad Text Reg", -apple-system, Arial, BlinkMacSystemFont, roboto slab, droid serif, segoe ui, Ubuntu, Cantarell, Georgia, serif;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.section h2 {
+    color: #007BFF;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.section ul li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.section ul li:before {
+    content: "\2022";
+    position: absolute;
+    left: 0;
+    color: #007BFF;
+}
+
+.image-container {
+    flex: 1;
+    text-align: center;
+}
+
+.image-container img {
+    max-width: 82%;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+.box1 {
+    height: 100%;
+    width: 100%;
+    background-image: url("index.png");
+    background-size: cover;
+    background-position: center;
+    display: table;
+    background-attachment: fixed;
+}
+nav{
+    position: fixed;
+    right: 5%;
+    top: 0.5%;
+    display: flex;
+    
+}
+nav li{
+    display: inline-block;
+    margin: 0 9px;
+}
+
+nav a{
+    text-decoration: none;
+    color: #ffffff;
+}
+.ul1 li{
+    font-size: 1.2vw;
+    font-weight: 600;
+    border: 2px solid white;
+    border-radius: 4%;
+    padding: 10px 40px 10px 40px;
+}
+
+a:hover{
+        .h{
+        background-color: white;
+        color: black;
+          }
+        .o{
+            background-color: white;
+            color: black;
+            
+        }
+}
+
+.qu {
+    position: absolute;
+    top: 33%;
+    right: 3%;
+    z-index: 0;
+    color: #fff;
+    font-size: 42px;
+}
+
+
+.menu{
+    cursor: pointer;
+    position: absolute;
+    right:-4.5%;
+    top: 18%;
+    display: none;
+}
+.menu-line{
+    height: 4px;
+    width: 36px;
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 20%;
+}
+.menu:hover{
+    .menu-line{
+        background-color: rgb(255, 255, 255);
+    }
+}
+.ul2 {
+    position: absolute;
+    top: 53%;
+    right: 6%;
+    
+}
+
+.ul2 li{
+    font-size: 1.2vw;
+    font-weight: 600;
+    border: 2px solid white;
+    border-radius: 4%;
+    padding: 10px 40px 10px 40px;
+}
+.header {
+    position: fixed;
+    width: 100%;
+    height: 17%;
+    background-color: transparent;
+}
+.scrolled {
+    /* background-image: linear-gradient(to right,#9c2760,#8ecdff); */
+    background-color: rgba(100, 100, 100, 0.5);
+    backdrop-filter: blur(12px);
+
+}
+.l1 {
+    border-radius: 14%;
+    position: absolute;
+    top: 22%;
+    left: 2%;
+}
+
+.p1 {
+    position: absolute;
+    top: 10%;
+    left: 9%;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5vw;
+    font-weight: 700;
+}
+
+.box2 {
+    height: 100%;
+    width: 100%;
+    background: #ffffff;
+    background-size: cover;
+    background-position: center;
+    display: table;
+    background-attachment: fixed;
+}
+
+.box3 {
+    
+    height: 100%;
+    width: 100%;
+    background-image: url("box333.jpg");
+    background-size: cover;
+    background-position: center;
+    display: table;
+    background-attachment: fixed;
+    
+}
+
+.box4 {
+    height: 100%;
+    width: 100%;
+    background-image: url("box4.jpg");
+    background-size: cover;
+    background-position: center;
+    display: table;
+    background-attachment: fixed;
+}
+
+.a2 {
+    font-family: "Pacifico", cursive;
+    font-style: normal;
+    font-size: 250%;
+    font-weight: 700;
+}
+
+.p2 {
+    text-transform: uppercase;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    letter-spacing: 4px;
+}
+
+.p3 {
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 190%;
+    font-weight: 600;
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 768px) {
+    
+    .l1{
+        top: 15%;
+        width: 9%;
+        height: 23%;
+    }
+
+    .li{
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .ul1 li {
+        font-size: 2vw;
+    }
+    .p1 {
+        font-size: 1em;
+        top: 3.1%;
+        left: 13%;
+    }
+    .a2 {
+        font-size: 200%;
+    }
+
+    .p2 {
+        font-size: 16px;
+    }
+
+    .p3 {
+        font-size: 150%;
+    }
+}
+@media all and (max-width:1000px)
+{
+    .header2{
+        height: 40%;
+        background-color: rgba(100, 100, 100, 0.5);
+        backdrop-filter: blur(6px);
+        /* background-image: linear-gradient(to right,#9c2760,#8ecdff); */
+        .l1 {
+            top: 7%;
+            width: 6%;
+            height: 21%;
+        }
+        .p1 {
+            font-family: 'Dancing Script', cursive;
+            top: 2%;
+        left: 9%;
+        font-size: 1.2em;
+        }
+    }
+    
+    .ul2 li {
+        font-size: 1.2vw;
+        font-weight: 600;
+        border: 2px solid white;
+        border-radius: 4%;
+        padding: 10px 40px 10px 40px;
+    }
+    .l1{
+        top: 23%;
+        width: 6%;
+        height: 50%;
+    }
+    .p1{
+        font-family: 'Dancing Script', cursive;
+        top: 22%;
+        left: 9%;
+        font-size: 1.2em;
+    }
+    
+    nav{
+        flex-direction: column;
+    }
+    nav
+        li{
+        display: block;
+        padding: 10px 0;
+        margin: 10px 9px;
+    }
+
+    
+    ul{
+        display: none;
+        text-align: center;
+    }
+    .h{
+        font-size: 1em;
+    }
+    .ul1{
+        padding: 0;
+        position: relative;
+        top: 35px;
+        left: 13%;
+    }
+    .ul2 {
+         
+        padding: 0;
+        position: relative;
+        top: -233px;
+        left: -94%;
+        
+    }
+    .menu{
+        display: block;
+    position: absolute;
+    top: 0%;
+    right:0%;
+    }
+    
+}
+@media screen and (max-width: 480px)
+ {
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+    .header2{
+        background-color: rgba(100, 100, 100, 0.5);
+        backdrop-filter: blur(6px);
+        /* background-image: linear-gradient(to right,#9c2760,#8ecdff); */
+    height: 37%;
+    .l1 {
+        left: 3%;
+        top: 13%;
+        width: 13%;
+        height: 18%;
+
+    }
+    .p1 {
+
+        font-family: 'Dancing Script', cursive;
+        top: 9%;
+        font-size: 1em;
+        left: 19%;
+    }
+}
+    
+    .l1 {
+        position: absolute;
+        left: 3%;
+        top: 28%;
+        width: 13%;
+        height: 40%;
+    }
+    .ul1 li {
+        font-size: 3vw;
+    }
+    .ul2 li {
+        font-size: 3vw;
+    }
+
+    .ul2 {
+         
+        padding: 0;
+        position: relative;
+        top: -175px;
+        left: -86%;
+        
+    }
+    
+    .p1 {
+        font-family: 'Dancing Script', cursive;
+        top: 20%;
+        font-size: 1em;
+        left: 19%;
+    }
+
+    .a2 {
+        font-size: 150%;
+    }
+
+    .p2 {
+        font-size: 14px;
+    }
+
+    .p3 {
+        font-size: 120%;
+    }
+}

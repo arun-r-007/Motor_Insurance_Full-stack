@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motor Insurance</title>
+    <link rel=" shortcut icon" type="x-icon" href="logo.png">
+    <style>
+       
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: linear-gradient(to right,#F8F8FF ,#E6E6FA);
+
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h2 {
+            font-size: 180%;
+            color: #333;
+        }
+        .form-container {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        form {
+            max-width: 500px;
+            margin: auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="submit"] {
+            width: calc(100% - 18px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+        input[type="submit"] {
+            background-color: #aa7bca;
+            color: white;
+            cursor: pointer;
+            font-size: 1.1em;
+        }
+        input[type="submit"]:hover {
+            background-color: #7e49a2;
+        }
+        .home-icon {
+            position: absolute;
+            top: 6%;
+            left: 6%;
+        }
+        .home-icon img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+        .home-icon img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <a href="new1.html" class="home-icon">
+        <img src="home.jpg" alt="Home">
+    </a><br><br><br>
+    <br><br><br><br><br><br><br>
+    <div class="container">
+        <div class="header">
+            <h2>CUSTOMER AND VEHICLE INFORMATION</h2>
+        </div>
+        <div class="form-container">
+            <form action="display.php" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="vehicle_num">Vehicle Number:</label>
+                <input type="text" id="vehicle_num" name="vehicle_num" required pattern="[A-Z]{2} \d{2} [A-Z]{2} \d{4}" title="Vehicle number must be in the format 'XX XX XX XXXX'">
+                <input type="submit" value="SUBMIT">
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

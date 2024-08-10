@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Motor Insurance</title>
+    <link rel=" shortcut icon" type="x-icon" href="logo.png">
+
+    <title>Database Entry Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; 
+            padding: 0;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('final1111.jpg') no-repeat center center fixed;
+            background-size: cover;
+            filter: blur(8px);
+            z-index: -1;
+        }
+        .form-container {
+            font-size: 22px;
+            width: 79%;
+            max-width: 600px;
+            margin: 50px auto; 
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            position: relative;
+            z-index: 1;
+        }
+        form {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="date"],
+        input[type="email"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #003399;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #001a4d;
+        }
+        .home-icon {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .home-icon img {
+            width: 50px;
+            height: 50px;
+        }
+        .home-icon {
+            position: fixed;
+            top: 6%;
+            left: 6%;
+            z-index: 10;
+        }
+        .home-icon img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+        .home-icon img:hover {
+            transform: scale(1.1);
+        }
+        .back-icon {
+            position: fixed;
+            top: 6%;
+            left: 88%;
+            z-index: 10;
+        }
+        .back-icon .back-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+        .back-icon .back-img:hover {
+            transform: scale(1.1);
+        }
+        @media (max-width: 768px) {
+            .home-icon {
+                top: 4%;
+                left: 4%;
+            }
+            .home-icon img {
+                width: 50px;
+                height: 50px;
+            }
+            .back-icon {
+                top: 4%;
+                left: 89%;
+            }
+            .back-icon .back-img {
+                width: 50px;
+                height: 50px;
+            }
+        }
+        @media (max-width: 480px) {
+            .form-container {
+                font-size: 15px;
+            }
+            .home-icon {
+                top: 4%;
+                left: 4%;
+            }
+            .home-icon img {
+                width: 50px;
+                height: 50px;
+            }
+            .back-icon {
+                top: 4%;
+                left: 83%;
+            }
+            .back-icon .back-img {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="new1.html" class="home-icon">
+        <img src="home.jpg" alt="Home">
+    </a>
+    <!-- <a href="../otp1/index1.php" class="back-icon">
+        <img src="left-arrow.png" class="back-img" alt="Back">
+    </a><br><br><br> --><br><br><br> 
+    <div class="form-container">
+        <h2>Customer Information Form</h2>
+        <form id="customerForm" action="process_customer.php" method="POST">
+            <label for="cname">Name:</label>
+            <input type="text" id="cname" name="cname" required placeholder="XXXXX X">
+            <label for="cdob">Date of Birth:</label>
+            <input type="date" id="cdob" name="cdob" required max="2006-07-30">
+            <label for="cphone_no">Phone Number:</label>
+            <input type="text" id="cphone_no" name="cphone_no" required pattern="\d{10}" title="Phone number must be exactly 10 digits" placeholder="9876543210">
+            <span id="phone-error" style="color: red;"></span>
+            <input type="hidden" id="cemail" name="cemail" required >
+            <input type="hidden" id="clicense" name="clicense" required>
+            <label for="caddress">Address:</label>
+            <input type="text" id="caddress" name="caddress" required placeholder="Address">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <script>
+        // Function to get query parameter by name
+        function getQueryParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+        // Get the email from the URL and bind it to the input field
+        const email = getQueryParameter('email');
+        if (email) {
+            document.getElementById('cemail').value = decodeURIComponent(email);
+        }
+
+        // Get the license number from the URL and bind it to the input field
+        const licenseNumber = getQueryParameter('licenseNumber');
+        if (licenseNumber) {
+            document.getElementById('clicense').value = decodeURIComponent(licenseNumber);
+        }
+
+
+
+        document.getElementById('cphone_no').addEventListener('input', function (e) {
+            var value = e.target.value;
+            // Remove any non-digit characters
+            value = value.replace(/\D/g, '');
+            // Limit to 10 digits
+            if (value.length > 10) {
+                value = value.slice(0, 10);
+            }
+            e.target.value = value;
+        });
+    </script>
+</body>
+</html>
