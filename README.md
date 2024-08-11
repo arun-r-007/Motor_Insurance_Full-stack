@@ -3,9 +3,12 @@ Developed a Motor Insurance Management System using HTML, CSS, JavaScript, PHP, 
 
 
 
+
+
 steo by step to setup
 
-and download                       Tesseract-OCR  library in                        C:\Program Files\Tesseract-OCR
+
+Download                       Tesseract-OCR  library in                        C:\Program Files\Tesseract-OCR
 
 and install composer from              https://getcomposer.org/          and setup it
 
