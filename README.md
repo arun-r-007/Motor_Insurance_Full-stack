@@ -81,4 +81,3 @@ Ensure that your XAMPP or web server is configured correctly:
 
 ---
 
-This guide now includes PHPMailer in the prerequisites for generating OTPs via email.
