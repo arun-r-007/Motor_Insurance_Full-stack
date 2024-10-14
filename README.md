@@ -2,7 +2,7 @@
 
 ---
 
-# Motor Insurance Management System
+# Motor Insurance Management Syste
 
 This Motor Insurance Management System is a full-stack web application that handles vehicle insurance tasks such as obtaining new policies, filing claims, and renewing existing policies. The system leverages secure OTP-based authentication for user validation and uses Tesseract-OCR for vehicle number image comparison to ensure data integrity.
 
