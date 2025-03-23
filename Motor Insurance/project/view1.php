@@ -352,18 +352,24 @@ function getDominantColor($imagePath) {
 
     console.log(`Name: ${name}, Vehicle Number: ${vehicle_num}, Date: ${date}`); // Debugging
 
-    fetch('insert_data.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams({
-            'name': name,
-            'vehicle_num': vehicle_num,
-            'date': date,
-            'request': request
-        })
-    })
+
+    // This part belongs to insurance claim
+    // not needed in view1.php
+                
+    // fetch('insert_data.php', {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/x-www-form-urlencoded',
+    //     },
+    //     body: new URLSearchParams({
+    //         'name': name,
+    //         'vehicle_num': vehicle_num,
+    //         'date': date,
+    //         'request': request
+    //     })
+    // })
+
+
     .then(response => response.text())
     .then(data => {
         if (data === 'Success') {
